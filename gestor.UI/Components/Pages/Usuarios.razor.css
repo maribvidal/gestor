@@ -1,0 +1,24 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+    width: 100%;
+}
+
+tbody, td, thead, th {
+    padding-left: 8px;
+
+    border-color:beige;
+    border-width:0px;
+
+    border-left-color:blueviolet;
+    border-left-style:dashed;
+    border-left-width:2px;
+
+    border-bottom-style:inset;
+    border-bottom-width:1px;
+}
+
+td.tipo-usuario {
+    font-style: italic;
+    color: rgb(99, 149, 99);
+}

@@ -1,0 +1,38 @@
+@page "/usuarios"
+@rendermode InteractiveServer
+@inject CasoDeUsoUsuarioConsultaTodos cduConsultaTodos
+
+<PageTitle>Usuarios</PageTitle>
+
+<h1>Lista de usuarios</h1>
+
+<table class="tabla-usuarios">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>FECHA CREACION</th>
+            <th>NIVEL DE USUARIO</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Usuario usu in _listaUsuarios)
+        {
+            <tr>
+                <td>@usu.Id</td>
+                <td>@usu.Nombre</td>
+                <td>@usu.FechaCreacion.ToString("d MMMM", CultureInfo.CreateSpecificCulture("es-MX"))</td>
+                <td class="tipo-usuario">@usu.Tipo</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code
+{
+    List<Usuario> _listaUsuarios = new List<Usuario>();
+    protected override void OnInitialized()
+    {
+        _listaUsuarios = cduConsultaTodos.Ejecutar();
+    }
+}

@@ -1,0 +1,15 @@
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\bin\Debug\net8.0\gestor.Repositorios.deps.json
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\bin\Debug\net8.0\gestor.Repositorios.dll
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\bin\Debug\net8.0\gestor.Repositorios.pdb
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\bin\Debug\net8.0\gestor.Aplicacion.dll
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\bin\Debug\net8.0\gestor.Aplicacion.pdb
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.csproj.AssemblyReference.cache
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.AssemblyInfoInputs.cache
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.AssemblyInfo.cs
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.csproj.CoreCompileInputs.cache
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.R.0A7A3500.Up2Date
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.dll
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\refint\gestor.Repositorios.dll
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.pdb
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\ref\gestor.Repositorios.dll

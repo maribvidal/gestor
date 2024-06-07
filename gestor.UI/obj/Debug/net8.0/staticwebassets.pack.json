@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Programacion\\Projectos VS\\gestor\\gestor.UI\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\gestor.UI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\gestor.UI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Programacion\\Projectos VS\\gestor\\gestor.UI\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Programacion\\Projectos VS\\gestor\\gestor.UI\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Programacion\\Projectos VS\\gestor\\gestor.UI\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Programacion\\Projectos VS\\gestor\\gestor.UI\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.gestor.UI.props",
+      "PackagePath": "build\\gestor.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.gestor.UI.props",
+      "PackagePath": "buildMultiTargeting\\gestor.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.gestor.UI.props",
+      "PackagePath": "buildTransitive\\gestor.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.gestor.UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,11 @@
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\bin\Debug\net8.0\gestor.Aplicacion.deps.json
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\bin\Debug\net8.0\gestor.Aplicacion.dll
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\bin\Debug\net8.0\gestor.Aplicacion.pdb
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.AssemblyInfoInputs.cache
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.AssemblyInfo.cs
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.csproj.CoreCompileInputs.cache
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.dll
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\refint\gestor.Aplicacion.dll
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.pdb
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\ref\gestor.Aplicacion.dll
