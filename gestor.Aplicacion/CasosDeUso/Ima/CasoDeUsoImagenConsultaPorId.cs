@@ -4,15 +4,15 @@ using gestor.Aplicacion.Interfaces;
 
 namespace gestor.Aplicacion.CasosDeUso.Ima;
 
-public class CasoDeUsoImagenConsultaPorUsuario(IImagenRepositorio ImaRepo, IUsuarioValidador UsuVali)
+public class CasoDeUsoImagenConsultaPorId(IImagenRepositorio ImaRepo, IUsuarioValidador UsuVali)
 {
-    public List<Imagen> Ejecutar(int idUsuario, Usuario usuario)
+    public Imagen Ejecutar(int idImagen, Usuario usuario)
     {
         //Verificar si el usuario existe
 
         if (!UsuVali.Validar(usuario, 1))
             throw new ValidacionException("El usuario no tiene el permiso requerido (lectura)");
 
-        return ImaRepo.ConsultaPorUsuario(idUsuario);
+        return ImaRepo.ConsultaPorId(idImagen);
     }
 }

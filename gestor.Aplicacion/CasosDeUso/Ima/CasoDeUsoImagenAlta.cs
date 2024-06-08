@@ -4,16 +4,17 @@ using gestor.Aplicacion.Interfaces;
 
 namespace gestor.Aplicacion.CasosDeUso.Ima;
 
-public class CasoDeUsoImagenAlta(IImagenRepositorio ImaRepo, IImagenValidador ImaVali)
+public class CasoDeUsoImagenAlta(IImagenRepositorio ImaRepo, IImagenValidador ImaVali, IUsuarioValidador UsuVali)
 {
     public void Ejecutar(Imagen imagen, Usuario usuario)
     {
-        //Primero, comprobar que todo sea válido
-        //TO-DO: Revisar permisos del usuario
+        if (!UsuVali.Validar(usuario, 2))
+            throw new ValidacionException("El usuario no tiene el permiso requerido (escritura)");
 
         if (!ImaVali.Validar(imagen.URL))
             throw new ValidacionException("La URL no es válida");
         
-        ImaRepo.AltaImagen(imagen, usuario);
+        usuario?.Imagenes?.Add(imagen); //Vincularla con el usuario
+        ImaRepo.AltaImagen(imagen);
     }
 }

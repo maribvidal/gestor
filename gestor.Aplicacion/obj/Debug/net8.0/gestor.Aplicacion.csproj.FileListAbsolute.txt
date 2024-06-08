@@ -9,3 +9,4 @@ C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Ap
 C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\refint\gestor.Aplicacion.dll
 C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.pdb
 C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\ref\gestor.Aplicacion.dll
+C:\Programacion\Projectos VS\gestor\gestor.Aplicacion\obj\Debug\net8.0\gestor.Aplicacion.sourcelink.json

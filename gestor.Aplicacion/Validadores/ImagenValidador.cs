@@ -1,9 +1,10 @@
 using gestor.Aplicacion.Entidades;
+using gestor.Aplicacion.Interfaces;
 using static System.Uri;
 
 namespace gestor.Aplicacion.Validadores;
 
-public class ImagenValidador
+public class ImagenValidador : IImagenValidador
 {
     public bool Validar(string imagenURL)
     {

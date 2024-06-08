@@ -1,0 +1,19 @@
+@page "/usuario"
+@rendermode InteractiveServer
+@inject NavigationManager Navegador;
+@inject CasoDeUsoUsuarioAlta cduUsuarioAlta
+
+<input placeholder="Nombre" @bind="_usuario.Nombre" class="form-control">
+<input placeholder="Contraseña" @bind="_usuario.Contraseña" class="form-control">
+<button class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+
+@code {
+    Usuario _usuario = new Usuario();
+    
+    void Aceptar()
+    {
+        cduUsuarioAlta.Ejecutar(_usuario);
+        _usuario = new Usuario();
+        Navegador.NavigateTo("/usuarios");
+    }
+}

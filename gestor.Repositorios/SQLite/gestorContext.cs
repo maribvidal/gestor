@@ -8,6 +8,7 @@ public class gestorContext : DbContext
     #nullable disable
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Imagen> Imagenes { get; set; }
+    public DbSet<Permiso> Permisos { get; set; }
     #nullable enable
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

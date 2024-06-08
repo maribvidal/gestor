@@ -63,3 +63,4 @@ C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\gestor.UI.pdb
 C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\gestor.UI.genruntimeconfig.cache
 C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\ref\gestor.UI.dll
 C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\scopedcss\Components\Pages\Usuarios.razor.rz.scp.css
+C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\gestor.UI.sourcelink.json

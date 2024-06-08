@@ -1,0 +1,20 @@
+@page "/imagen"
+@rendermode InteractiveServer
+@inject NavigationManager Navegador;
+@inject CasoDeUsoUsuarioConsultaPorId cduUsuarioConsultaPorId
+@inject CasoDeUsoImagenAlta cduImagenAlta
+
+<input placeholder="Id usuario" @bind="_imagen.UsuarioId" class="form-control">
+<input placeholder="Link de la Imagen" @bind="_imagen.URL" class="form-control">
+<button class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+
+@code {
+    Imagen _imagen = new Imagen();
+    
+    void Aceptar()
+    {
+        var consultaUsuario = cduUsuarioConsultaPorId.Ejecutar(_imagen.UsuarioId);
+        cduImagenAlta.Ejecutar(_imagen, consultaUsuario);
+        _imagen = new Imagen();
+    }
+}

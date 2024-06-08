@@ -13,3 +13,4 @@ C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.
 C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\refint\gestor.Repositorios.dll
 C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.pdb
 C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\ref\gestor.Repositorios.dll
+C:\Programacion\Projectos VS\gestor\gestor.Repositorios\obj\Debug\net8.0\gestor.Repositorios.sourcelink.json

@@ -4,12 +4,12 @@ using gestor.Aplicacion.Interfaces;
 
 namespace gestor.Aplicacion.CasosDeUso.Ima;
 
-public class CasoDeUsoImagenBaja(IImagenRepositorio ImaRepo)
+public class CasoDeUsoImagenBaja(IImagenRepositorio ImaRepo, IUsuarioValidador UsuVali)
 {
     public void Ejecutar(int idImagen, Usuario usuario)
     {
-        //Primero, comprobar que todo sea válido
-        //TO-DO: Revisar permisos del usuario
+        if (!UsuVali.Validar(usuario, 2))
+            throw new ValidacionException("El usuario no tiene el permiso requerido");
         
         ImaRepo.BajaImagen(idImagen);
     }

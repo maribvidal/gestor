@@ -5,7 +5,7 @@ namespace gestor.Aplicacion.Entidades;
 public class Imagen
 {
     public int Id { get; set; }
-    public string URL { get; private set; } = "";
+    public string URL { get; set; } = "";
     public TipoImagen Tipo { get; set; }
-    //El campo UsuarioId lo implementa automáticamente SQLite
+    public int UsuarioId { get; set; }
 }

@@ -4,12 +4,14 @@ using gestor.Aplicacion.Interfaces;
 
 namespace gestor.Aplicacion.CasosDeUso.Ima;
 
-public class CasoDeUsoImagenModificar(IImagenRepositorio ImaRepo, IImagenValidador ImaVali)
+public class CasoDeUsoImagenModificar(IImagenRepositorio ImaRepo, IImagenValidador ImaVali, IUsuarioValidador UsuVali)
 {
     public void Ejecutar(Imagen nuevaImagen, int idImagen, Usuario usuario)
     {
-        //Primero, comprobar que todo sea válido
-        //TO-DO: Revisar permisos del usuario
+        //Verificar si el usuario existe
+
+        if (!UsuVali.Validar(usuario, 2))
+            throw new ValidacionException("El usuario no tiene el permiso requerido (escritura)");
         
         if (!ImaVali.Validar(nuevaImagen.URL))
             throw new ValidacionException("La URL de la nueva imagen no es válida");

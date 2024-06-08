@@ -1,6 +1,7 @@
 @page "/usuarios"
 @rendermode InteractiveServer
 @inject CasoDeUsoUsuarioConsultaTodos cduConsultaTodos
+@inject CasoDeUsoUsuarioConsultaPermisos cduConsultaPermisos
 
 <PageTitle>Usuarios</PageTitle>
 
@@ -22,7 +23,7 @@
                 <td>@usu.Id</td>
                 <td>@usu.Nombre</td>
                 <td>@usu.FechaCreacion.ToString("d MMMM", CultureInfo.CreateSpecificCulture("es-MX"))</td>
-                <td class="tipo-usuario">@usu.Tipo</td>
+                <td class="tipo-usuario">@(MostrarPermisos(usu))</td>
             </tr>
         }
     </tbody>
@@ -34,5 +35,14 @@
     protected override void OnInitialized()
     {
         _listaUsuarios = cduConsultaTodos.Ejecutar();
+    }
+
+    string MostrarPermisos(Usuario usu)
+    {
+        //Obtenemos una lista con los permisos, y si no, devolvemos un string vacío
+        var listaPermisos = cduConsultaPermisos.Ejecutar(usu.Id);
+        if (listaPermisos != null && listaPermisos.Count > 0)
+            return string.Join(", ", listaPermisos.Select(p => p.Tipo));
+        return "NO HAY PERMISOS";
     }
 }

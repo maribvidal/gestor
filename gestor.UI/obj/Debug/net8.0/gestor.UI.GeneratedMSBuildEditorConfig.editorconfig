@@ -22,16 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/EditarImagen.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0YXJJbWFnZW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/EditarUsuario.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0YXJVc3VhcmlvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/Imagenes.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbWFnZW5lcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/Inicio.razor]
