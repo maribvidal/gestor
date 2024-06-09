@@ -11,7 +11,7 @@ public class CasoDeUsoImagenModificar(IImagenRepositorio ImaRepo, IImagenValidad
         //Verificar si el usuario existe
 
         if (!UsuVali.Validar(usuario, 2))
-            throw new ValidacionException("El usuario no tiene el permiso requerido (escritura)");
+            throw new ValidacionException($"El usuario {usuario.Id} no tiene el permiso requerido (escritura)");
         
         if (!ImaVali.Validar(nuevaImagen.URL))
             throw new ValidacionException("La URL de la nueva imagen no es válida");

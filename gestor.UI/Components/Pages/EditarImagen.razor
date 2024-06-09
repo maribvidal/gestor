@@ -13,8 +13,15 @@
     
     void Aceptar()
     {
-        var consultaUsuario = cduUsuarioConsultaPorId.Ejecutar(_imagen.UsuarioId);
-        cduImagenAlta.Ejecutar(_imagen, consultaUsuario);
-        _imagen = new Imagen();
+        try 
+        {
+            var consultaUsuario = cduUsuarioConsultaPorId.Ejecutar(_imagen.UsuarioId);
+            cduImagenAlta.Ejecutar(_imagen, consultaUsuario);
+        }
+        catch (Exception ex) {
+            //Esto evita que aparezcan errores en la página web
+            Console.WriteLine(" * ERROR: " + ex.Message);
+        }
+            _imagen = new Imagen();
     }
 }

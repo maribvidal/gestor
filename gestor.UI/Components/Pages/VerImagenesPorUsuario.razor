@@ -1,0 +1,36 @@
+@page "/usuario/{UsuarioId:int?}/imagenes"
+@rendermode InteractiveServer
+@inject CasoDeUsoUsuarioConsultaPorId cduUsuarioConsultaPorId
+@inject CasoDeUsoImagenConsultaPorUsuario cduImgUsuario
+
+<h3>Lista de Imagenes</h3>
+<div class="galeria">
+    @if (_listaImagenes.Count > 0) 
+    {
+        @foreach (Imagen imagen in _listaImagenes) 
+        {
+            <div><img src="@imagen.URL" /></div>
+        }
+    }
+</div>
+
+@code {
+    List<Imagen> _listaImagenes = new List<Imagen>();
+    [Parameter] public int? UsuarioId { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        try 
+        {
+            if (UsuarioId != null)
+            {
+                Usuario usuario = cduUsuarioConsultaPorId.Ejecutar(UsuarioId.Value);
+                _listaImagenes = cduImgUsuario.Ejecutar(UsuarioId.Value, usuario);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(" * ERROR: " + ex.Message);
+        }
+    }
+}

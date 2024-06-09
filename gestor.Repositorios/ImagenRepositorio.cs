@@ -12,17 +12,19 @@ public class ImagenRepositorio : Repositorio, IImagenRepositorio
     public void AltaImagen(Imagen imagen) 
     {
         Contexto.Imagenes.Add(imagen);
+        Contexto.SaveChanges(); //Guardar cambios en la base de datos
     }
     public void BajaImagen(int id) 
     {
         Imagen imagenConsultada = Contexto.Imagenes.Where(img => img.Id == id).SingleOrDefault() ?? throw new RepositorioException($"La imagen con id {id} no se encuentra registrada");
         Contexto.Remove(imagenConsultada);
+        Contexto.SaveChanges();
     }
     public void ModificarImagen(Imagen imagen, int id) 
     {
         Imagen imagenConsultada = Contexto.Imagenes.Where(img => img.Id == id).SingleOrDefault() ?? throw new RepositorioException($"La imagen con id {id} no se encuentra registrada");
         imagenConsultada = imagen;
-
+        Contexto.SaveChanges();
     }
     public Imagen ConsultaPorId(int id) 
     {

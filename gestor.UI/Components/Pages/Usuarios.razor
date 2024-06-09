@@ -13,6 +13,7 @@
             <th>ID</th>
             <th>NOMBRE</th>
             <th>FECHA CREACION</th>
+            <th>VER IMAGENES PUBLICADAS</th>
             <th>NIVEL DE USUARIO</th>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
                 <td>@usu.Id</td>
                 <td>@usu.Nombre</td>
                 <td>@usu.FechaCreacion.ToString("d MMMM", CultureInfo.CreateSpecificCulture("es-MX"))</td>
+                <td><a href="/usuario/@(usu.Id)/imagenes">Click aquí</a></td>
                 <td class="tipo-usuario">@(MostrarPermisos(usu))</td>
             </tr>
         }

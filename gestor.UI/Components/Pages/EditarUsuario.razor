@@ -1,7 +1,18 @@
-@page "/usuario"
+@page "/usuario/{Id:int?}"
 @rendermode InteractiveServer
 @inject NavigationManager Navegador;
 @inject CasoDeUsoUsuarioAlta cduUsuarioAlta
+@inject CasoDeUsoUsuarioModificar cduUsuarioModificar
+@inject CasoDeUsoUsuarioConsultaPorId cduUsuConPorId
+
+@if (_esNuevoUsuario)
+{
+    <h2>Nuevo usuario</h2>
+}
+else
+{
+    <h2>Modificando al usuario "@_usuario.Nombre"</h2>
+}
 
 <input placeholder="Nombre" @bind="_usuario.Nombre" class="form-control">
 <input placeholder="Contraseña" @bind="_usuario.Contraseña" class="form-control">
@@ -9,11 +20,42 @@
 
 @code {
     Usuario _usuario = new Usuario();
+    [Parameter] public int? Id { get; set; }
+    bool _esNuevoUsuario = true;
     
+    protected override void OnParametersSet()
+    {
+        if (Id != null)
+        {
+            var usuarioConsultado = cduUsuConPorId.Ejecutar(Id.Value);
+            if (usuarioConsultado != null)
+            {
+                _usuario = usuarioConsultado;
+                _esNuevoUsuario = false;
+            }
+        }
+    }
+
     void Aceptar()
     {
-        cduUsuarioAlta.Ejecutar(_usuario);
-        _usuario = new Usuario();
-        Navegador.NavigateTo("/usuarios");
+        try 
+        {
+            if (_esNuevoUsuario) 
+            {
+                cduUsuarioAlta.Ejecutar(_usuario);
+                
+            }
+            else
+            {
+                if (Id != null)
+                    cduUsuarioModificar.Ejecutar(_usuario, Id.Value);
+            }
+            _usuario = new Usuario();
+            Navegador.NavigateTo("/usuarios");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(" * ERROR: " + ex.Message);
+        }
     }
 }

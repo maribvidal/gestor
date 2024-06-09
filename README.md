@@ -6,5 +6,5 @@ Este proyecto cuenta con las siguientes características:
  - Todos los repositorios comparten el mismo contexto
 
 Permisos del usuario:
- - 0: LECTURA
- - 1: ESCRITURA
+ - 1: LECTURA
+ - 2: ESCRITURA

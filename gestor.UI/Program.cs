@@ -25,6 +25,7 @@ builder.Services.AddSingleton<IImagenValidador, ImagenValidador>();
 builder.Services.AddSingleton<IUsuarioValidador, UsuarioValidador>();
 
 builder.Services.AddTransient<CasoDeUsoUsuarioAlta>();
+builder.Services.AddTransient<CasoDeUsoUsuarioModificar>();
 builder.Services.AddTransient<CasoDeUsoUsuarioConsultaPorId>();
 builder.Services.AddTransient<CasoDeUsoUsuarioConsultaTodos>();
 builder.Services.AddTransient<CasoDeUsoUsuarioConsultaPermisos>();

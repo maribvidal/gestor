@@ -9,7 +9,7 @@ public class CasoDeUsoImagenAlta(IImagenRepositorio ImaRepo, IImagenValidador Im
     public void Ejecutar(Imagen imagen, Usuario usuario)
     {
         if (!UsuVali.Validar(usuario, 2))
-            throw new ValidacionException("El usuario no tiene el permiso requerido (escritura)");
+            throw new ValidacionException($"El usuario {usuario.Id} no tiene el permiso requerido (escritura)");
 
         if (!ImaVali.Validar(imagen.URL))
             throw new ValidacionException("La URL no es válida");

@@ -226,3 +226,10 @@ td.tipo-usuario[b-gt6rv6gx2t] {
     font-style: italic;
     color: rgb(99, 149, 99);
 }
+/* _content/gestor.UI/Components/Pages/VerImagenesPorUsuario.razor.rz.scp.css */
+div.galeria[b-jozlx4ws84] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}

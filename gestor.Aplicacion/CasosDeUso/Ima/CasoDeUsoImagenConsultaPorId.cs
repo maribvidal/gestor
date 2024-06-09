@@ -11,7 +11,7 @@ public class CasoDeUsoImagenConsultaPorId(IImagenRepositorio ImaRepo, IUsuarioVa
         //Verificar si el usuario existe
 
         if (!UsuVali.Validar(usuario, 1))
-            throw new ValidacionException("El usuario no tiene el permiso requerido (lectura)");
+            throw new ValidacionException($"El usuario {usuario.Id} no tiene el permiso requerido (lectura)");
 
         return ImaRepo.ConsultaPorId(idImagen);
     }

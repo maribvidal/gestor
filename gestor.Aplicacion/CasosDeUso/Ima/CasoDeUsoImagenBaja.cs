@@ -9,7 +9,7 @@ public class CasoDeUsoImagenBaja(IImagenRepositorio ImaRepo, IUsuarioValidador U
     public void Ejecutar(int idImagen, Usuario usuario)
     {
         if (!UsuVali.Validar(usuario, 2))
-            throw new ValidacionException("El usuario no tiene el permiso requerido");
+            throw new ValidacionException($"El usuario {usuario.Id} no tiene el permiso requerido");
         
         ImaRepo.BajaImagen(idImagen);
     }

@@ -57,3 +57,7 @@ build_metadata.AdditionalFiles.CssScope = b-ymr1fk7aln
 [C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/Usuarios.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc3Vhcmlvcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-gt6rv6gx2t
+
+[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/VerImagenesPorUsuario.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWZXJJbWFnZW5lc1BvclVzdWFyaW8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-jozlx4ws84
