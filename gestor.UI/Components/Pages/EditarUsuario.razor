@@ -4,6 +4,7 @@
 @inject CasoDeUsoUsuarioAlta cduUsuarioAlta
 @inject CasoDeUsoUsuarioModificar cduUsuarioModificar
 @inject CasoDeUsoUsuarioConsultaPorId cduUsuConPorId
+@using gestor.Aplicacion.Enumerativos;
 
 @if (_esNuevoUsuario)
 {
@@ -15,7 +16,7 @@ else
 }
 
 <input placeholder="Nombre" @bind="_usuario.Nombre" class="form-control">
-<input placeholder="Contraseña" @bind="_usuario.Contraseña" class="form-control">
+<input placeholder="Contraseña" @bind="_usuario.Contraseña" type="password" class="form-control">
 <button class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
 
 @code {

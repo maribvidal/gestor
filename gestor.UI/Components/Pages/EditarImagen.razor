@@ -3,20 +3,42 @@
 @inject NavigationManager Navegador;
 @inject CasoDeUsoUsuarioConsultaPorId cduUsuarioConsultaPorId
 @inject CasoDeUsoImagenAlta cduImagenAlta
+@inject CasoDeUsoObtenerUsuario cduObtenerUsuario
+@inject CasoDeUsoUsuarioTienePermiso cduTienePermiso
 
-<input placeholder="Id usuario" @bind="_imagen.UsuarioId" class="form-control">
-<input placeholder="Link de la Imagen" @bind="_imagen.URL" class="form-control">
-<button class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+@if (_tienePermiso)
+{
+    <input placeholder="Link de la Imagen" @bind="_imagen.URL" class="form-control">
+    <button class="btn btn-primary" @onclick="Aceptar">Aceptar</button>
+}
+else
+{
+    <AccesoDenegado />
+}
 
 @code {
+    Usuario? _sesionUsuario = null;
     Imagen _imagen = new Imagen();
+    bool _tienePermiso = false;
+
+    protected override void OnInitialized()
+    {
+        try
+        {
+            _sesionUsuario = cduObtenerUsuario.Obtener();
+            _tienePermiso = cduTienePermiso.Ejecutar(_sesionUsuario.Id, 2);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("ERROR: " + ex.Message);
+        }
+    }
     
     void Aceptar()
     {
         try 
         {
-            var consultaUsuario = cduUsuarioConsultaPorId.Ejecutar(_imagen.UsuarioId);
-            cduImagenAlta.Ejecutar(_imagen, consultaUsuario);
+            cduImagenAlta.Ejecutar(_imagen, _sesionUsuario);
         }
         catch (Exception ex) {
             //Esto evita que aparezcan errores en la página web

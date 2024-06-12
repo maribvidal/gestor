@@ -10,4 +10,5 @@ public interface IUsuarioRepositorio
     Usuario ConsultaPorId(int id);
     List<Usuario> ConsultaTodos();
     List<Permiso> ConsultaPermisos(int id);
+    bool TienePermiso(int id, int idPermiso);
 }

@@ -1,6 +1,29 @@
-﻿<Router AppAssembly="typeof(Program).Assembly">
-    <Found Context="routeData">
-        <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
-        <FocusOnNavigate RouteData="routeData" Selector="h1" />
-    </Found>
-</Router>
+﻿@rendermode InteractiveServer
+@inject CasoDeUsoCambiarUsuario cduCambiar
+@inject CasoDeUsoSesionEstado cduEstado
+@inject CasoDeUsoUsuarioConsultaTodos cduConsultaTodos
+
+@if (!cduEstado.Obtener()) 
+{
+    <Login usuario="sesionUsuario" OnConectado="CrearSesion" />
+}
+else
+{
+    <Router AppAssembly="typeof(Program).Assembly">
+        <Found Context="routeData">
+            <RouteView RouteData="routeData" DefaultLayout="typeof(Layout.MainLayout)" />
+            <FocusOnNavigate RouteData="routeData" Selector="h1" />
+        </Found>
+    </Router>
+}
+
+@code
+{
+    public Usuario sesionUsuario = new Usuario();
+
+    void CrearSesion()
+    {
+        sesionUsuario = cduConsultaTodos.Ejecutar().Where(u => u.Nombre == sesionUsuario.Nombre).Single();
+        cduCambiar.Cambiar(sesionUsuario);
+    }
+}

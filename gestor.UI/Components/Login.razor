@@ -1,0 +1,77 @@
+@rendermode InteractiveServer
+@inject CasoDeUsoUsuarioConsultaTodos cduConsultaTodos
+
+<div class="login-container">
+    <div><h1>Inicio de sesión</h1></div>
+    <div>
+        <span>
+            <b>Usuario: </b>
+            <input placeholder="Nombre" @bind="usuario.Nombre" class="form-control">
+        </span>
+    </div>
+    <div>
+        <span>
+            <b>Contraseña: </b>
+            <input placeholder="Contraseña" @bind="usuario.Contraseña" type="password" class="form-control">
+        </span>
+    </div>
+    <div>
+        <span>
+            <button class="btn btn-primary" @onclick="Conectar">Conectarse</button>
+        </span>
+    </div>
+</div>
+
+<style>
+    div.login-container {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+</style>
+
+@code {
+    List<Usuario> listaUsuarios = new List<Usuario>();
+    [Parameter] 
+    public Usuario usuario { get; set; }
+    [Parameter] 
+    public EventCallback OnConectado { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        listaUsuarios = cduConsultaTodos.Ejecutar();
+    }
+
+    void Conectar()
+    {
+        if (ExisteCuenta()) 
+        {
+            Usuario consultaUsuario = listaUsuarios.Where(u => u.Nombre == usuario.Nombre).Single();
+            if (consultaUsuario.Contraseña == usuario.Contraseña)
+            {
+                OnConectado.InvokeAsync();
+            }
+            else
+            {
+                Console.WriteLine("Contraseña incorrecta");
+            }
+        }
+    }
+
+    bool ExisteCuenta()
+    {
+        try
+        {
+            var consultaUsuario = listaUsuarios.Where(u => u.Nombre == usuario.Nombre).SingleOrDefault();
+            if (consultaUsuario != null)
+                return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("ERROR: " + ex.Message);
+        }
+        return false;
+    }
+}

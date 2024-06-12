@@ -22,6 +22,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/AccesoDenegado.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY2Nlc29EZW5lZ2Fkby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/Administracion.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pbmlzdHJhY2lvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/EditarImagen.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0YXJJbWFnZW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

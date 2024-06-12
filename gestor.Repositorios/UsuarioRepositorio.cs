@@ -1,3 +1,6 @@
+using System;
+using System.Security.Cryptography;
+using System.Text;
 using gestor.Aplicacion.Entidades;
 using gestor.Aplicacion.Excepciones;
 using gestor.Aplicacion.Interfaces;
@@ -14,6 +17,9 @@ public class UsuarioRepositorio : Repositorio, IUsuarioRepositorio
     //Operaciones
     public void AltaUsuario(Usuario usuario)
     {
+        //Aplicar el hashing a la contraseña
+        usuario.Contraseña = ObtenerHash(usuario.Contraseña);
+        //Poner la fecha del momento
         usuario.FechaCreacion = DateTime.Now; //Poner la fecha del momento
         Contexto.Usuarios.Add(usuario);
         Contexto.SaveChanges();
@@ -66,5 +72,23 @@ public class UsuarioRepositorio : Repositorio, IUsuarioRepositorio
         var consultaUsuario = Contexto.Usuarios.Where(u => u.Id == id).SingleOrDefault() ?? throw new RepositorioException($"El usuario con id {id} no se encuentra registrado");
         var consultaPermisos = consultaUsuario?.Permisos?.ToList();
         return consultaPermisos ?? new List<Permiso>();
+    }
+
+    public bool TienePermiso(int id, int idPermiso)
+    {
+        var consultaUsuario = Contexto.Usuarios.Where(u => u.Id == id).SingleOrDefault() ?? throw new RepositorioException($"El usuario con id {id} no se encuentra registrado");
+        var consultaPermiso = consultaUsuario?.Permisos?.Where(p => p.Id == idPermiso).SingleOrDefault();
+        if (consultaPermiso == null)
+            return false;
+        return true;
+    }
+
+    //Métodos de orden secundario
+    private string ObtenerHash(string contraseña)
+    {
+        //NOTA: El algoritmo SHA256 no es recomendado para hashear contraseñas en la actualidad
+        var contraBytes = Encoding.UTF8.GetBytes(contraseña);
+        var contraHash = SHA256.HashData(contraBytes);
+        return Convert.ToHexString(contraHash);
     }
 }

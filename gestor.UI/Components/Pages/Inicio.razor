@@ -1,7 +1,8 @@
 ﻿@page "/"
+@inject CasoDeUsoObtenerUsuario cduObtenerUsuario
 
 <PageTitle>Inicio</PageTitle>
 
-<h1>¡Buenos días!</h1>
+<h1>¡Buenos días @(cduObtenerUsuario.Obtener().Nombre ?? "")!</h1>
 
 Bienvenido al gestor de usuarios e imagenes

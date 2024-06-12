@@ -1,0 +1,14 @@
+@page "/administracion"
+@inject CasoDeUsoObtenerUsuario cduObtenerUsuario
+@inject CasoDeUsoUsuarioTienePermiso cduTienePermiso
+@inject CasoDeUsoUsuarioConsultaTodos cduTodos
+
+@if (cduTienePermiso.Ejecutar(cduObtenerUsuario.Obtener().Id, 2))
+{
+    <h1>Administrar cuentas</h1>
+    <i>En esta página vas a poder banear a todos esos bobis</i>
+}
+else
+{
+    <AccesoDenegado />
+}
