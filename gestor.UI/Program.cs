@@ -7,6 +7,7 @@ using gestor.Repositorios.SQLite;
 using gestor.Aplicacion.CasosDeUso.Usu;
 using gestor.Aplicacion.CasosDeUso.Ima;
 using gestor.Aplicacion.CasosDeUso.Ses;
+using gestor.Aplicacion.CasosDeUso.Has;
 
 using gestor.Aplicacion.Interfaces;
 using gestor.Aplicacion.Entidades;
@@ -22,9 +23,12 @@ builder.Services.AddRazorComponents()
 
 //  - Los nuestros
 gestorContext contexto = new gestorContext(); //Vamos a compartir el
+builder.Services.AddSingleton<IHasher, Hasher>();
+builder.Services.AddTransient<CasoDeUsoObtenerHash>();
 
 //  Sesión de usuario
 builder.Services.AddScoped<CasoDeUsoSesionEstado>();
+builder.Services.AddScoped<CasoDeUsoAlternarSesion>();
 builder.Services.AddScoped<CasoDeUsoObtenerUsuario>();
 builder.Services.AddScoped<CasoDeUsoCambiarUsuario>();
 builder.Services.AddScoped<ISesion, Sesion>();

@@ -65,3 +65,5 @@ C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\ref\gestor.UI.dll
 C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\scopedcss\Components\Pages\Usuarios.razor.rz.scp.css
 C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\gestor.UI.sourcelink.json
 C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\scopedcss\Components\Pages\VerImagenesPorUsuario.razor.rz.scp.css
+C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\scopedcss\Components\DialogoConfirmacion.razor.rz.scp.css
+C:\Programacion\Projectos VS\gestor\gestor.UI\obj\Debug\net8.0\scopedcss\Components\Salir.razor.rz.scp.css

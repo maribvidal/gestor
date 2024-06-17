@@ -1,3 +1,22 @@
+/* _content/gestor.UI/Components/DialogoConfirmacion.razor.rz.scp.css */
+.dialogo-contenedor[b-472zn0fx00] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialogo-contenido[b-472zn0fx00] {
+    padding: 20px;
+    background-color: white;
+}
 /* _content/gestor.UI/Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-1n9npwwm1b] {
     position: relative;
@@ -232,4 +251,15 @@ div.galeria[b-jozlx4ws84] {
     flex-direction: row;
     flex-wrap: wrap;
     row-gap: 20px;
+}
+/* _content/gestor.UI/Components/Salir.razor.rz.scp.css */
+.btn-salir[b-vmzcxcu2w1] {
+    position: fixed;
+    z-index: 1;
+    top: 96%;
+    left: 0;
+}
+
+div.btn-salir button[b-vmzcxcu2w1] {
+    width: 250px;
 }

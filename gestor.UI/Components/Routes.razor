@@ -1,6 +1,7 @@
 ﻿@rendermode InteractiveServer
 @inject CasoDeUsoCambiarUsuario cduCambiar
 @inject CasoDeUsoSesionEstado cduEstado
+@inject CasoDeUsoAlternarSesion cduAlternar
 @inject CasoDeUsoUsuarioConsultaTodos cduConsultaTodos
 
 @if (!cduEstado.Obtener()) 
@@ -15,6 +16,7 @@ else
             <FocusOnNavigate RouteData="routeData" Selector="h1" />
         </Found>
     </Router>
+    <Salir AlCerrar="CerrarSesion" />
 }
 
 @code
@@ -25,5 +27,12 @@ else
     {
         sesionUsuario = cduConsultaTodos.Ejecutar().Where(u => u.Nombre == sesionUsuario.Nombre).Single();
         cduCambiar.Cambiar(sesionUsuario);
+    }
+
+    void CerrarSesion()
+    {
+        cduAlternar.Cambiar();
+        sesionUsuario = new Usuario();
+        StateHasChanged();
     }
 }

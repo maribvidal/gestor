@@ -58,6 +58,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/DialogoConfirmacion.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xEaWFsb2dvQ29uZmlybWFjaW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-472zn0fx00
+
 [C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-1n9npwwm1b
@@ -73,3 +77,7 @@ build_metadata.AdditionalFiles.CssScope = b-gt6rv6gx2t
 [C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Pages/VerImagenesPorUsuario.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWZXJJbWFnZW5lc1BvclVzdWFyaW8ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-jozlx4ws84
+
+[C:/Programacion/Projectos VS/gestor/gestor.UI/Components/Salir.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xTYWxpci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-vmzcxcu2w1

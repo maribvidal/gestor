@@ -1,4 +1,6 @@
 @rendermode InteractiveServer
+@inject CasoDeUsoUsuarioAlta cduUsuarioAlta
+@inject CasoDeUsoObtenerHash cduHash
 @inject CasoDeUsoUsuarioConsultaTodos cduConsultaTodos
 
 <div class="login-container">
@@ -18,8 +20,10 @@
     <div>
         <span>
             <button class="btn btn-primary" @onclick="Conectar">Conectarse</button>
+            <button class="btn btn-primary" @onclick="Registrar">Registrarse</button>
         </span>
     </div>
+    <DialogoConfirmacion @ref=dialogo Mensaje="" />
 </div>
 
 <style>
@@ -34,6 +38,7 @@
 
 @code {
     List<Usuario> listaUsuarios = new List<Usuario>();
+    DialogoConfirmacion dialogo = null!;
     [Parameter] 
     public Usuario usuario { get; set; }
     [Parameter] 
@@ -44,18 +49,33 @@
         listaUsuarios = cduConsultaTodos.Ejecutar();
     }
 
+    void Registrar()
+    {
+        if (!ExisteCuenta()) 
+        {
+            cduUsuarioAlta.Ejecutar(usuario);
+            OnConectado.InvokeAsync();
+        }
+        else
+        {
+            dialogo.Mensaje = "Esa cuenta ya se encuentra registrada";
+            dialogo.Mostrar();
+        }
+    }
+
     void Conectar()
     {
         if (ExisteCuenta()) 
         {
             Usuario consultaUsuario = listaUsuarios.Where(u => u.Nombre == usuario.Nombre).Single();
-            if (consultaUsuario.Contraseña == usuario.Contraseña)
+            if (consultaUsuario.Contraseña == cduHash.Obtener(usuario.Contraseña))
             {
                 OnConectado.InvokeAsync();
             }
             else
             {
-                Console.WriteLine("Contraseña incorrecta");
+                dialogo.Mensaje = "La contraseña es incorrecta";
+                dialogo.Mostrar();
             }
         }
     }
@@ -72,6 +92,8 @@
         {
             Console.WriteLine("ERROR: " + ex.Message);
         }
+        dialogo.Mensaje = "Esa cuenta no se encuentra registrada";
+        dialogo.Mostrar();
         return false;
     }
 }
