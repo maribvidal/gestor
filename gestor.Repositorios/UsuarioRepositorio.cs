@@ -63,7 +63,7 @@ public class UsuarioRepositorio : Repositorio, IUsuarioRepositorio
 
     public List<Usuario> ConsultaTodos()
     {
-        List<Usuario> consultarTodos = Contexto.Usuarios.Include(u => u.Permisos).ToList() ?? new List<Usuario>();
+        List<Usuario> consultarTodos = Contexto.Usuarios.Include(u => u.Permisos).AsNoTracking().ToList() ?? new List<Usuario>();
 
         //Como es una lista, no pasa nada al devolverla vacía
         return consultarTodos;
